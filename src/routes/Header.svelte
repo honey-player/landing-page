@@ -32,7 +32,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/honey-player/releases">
+		<a href="https://github.com/honey-player/landing-page">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>
