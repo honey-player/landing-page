@@ -5,23 +5,23 @@
 
 	import './styles.css';
 
-	let clientOS = '';
+	let clientExtension = '';
 	onMount(() => {
 		const os = navigator.userAgent;
 
-		let finalOs = '';
+		let extension = '';
 
 		if (os.search('Windows') !== -1) {
-			finalOs = 'win';
+			extension = 'msi';
 		} else if (os.search('Mac') !== -1) {
-			finalOs = 'mac';
+			extension = 'dmg';
 		} else if (os.search('X11') !== -1 && !(os.search('Linux') !== -1)) {
-			finalOs = 'linux';
+			extension = 'AppImage';
 		} else if (os.search('Linux') !== -1 && os.search('X11') !== -1) {
-			finalOs = 'linux';
+			extension = 'AppImage';
 		}
 
-		clientOS = finalOs;
+		clientExtension = extension;
 	});
 </script>
 
@@ -33,7 +33,7 @@
 	</main>
 
 	<footer>
-		<a href={`https://download.honeyplayer.com?os=${clientOS}`}
+		<a href={`https://download.honeyplayer.com?extension=${clientExtension}`}
 			><button class="download">Download Now</button></a
 		>
 		<span>
